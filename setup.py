@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name = 'YOURAPP',
+    name = 'python-cl-api',
     version = '1.0.0',
     packages = find_packages(),
     install_requires = [
@@ -12,12 +12,10 @@ setup(
     url = 'http://cottagelabs.com/',
     author = 'Cottage Labs',
     author_email = 'us@cottagelabs.com',
-    description = 'DESCRIBE YOUR APP',
+    description = 'Python tools and utilities to support the CL API',
     classifiers = [
-        'Development Status :: 3 - Alpha',
         'Environment :: Console',
         'Intended Audience :: Developers',
-        'License :: Copyheart',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Topic :: Software Development :: Libraries :: Python Modules'
