@@ -9,6 +9,8 @@ THREADED = True
 ############################################
 # important overrides for the ES module
 
+INITIALISE_INDEX = False
+
 # elasticsearch back-end connection settings
 ELASTIC_SEARCH_HOST = "http://localhost:9200"
 ELASTIC_SEARCH_INDEX = "db"
@@ -33,6 +35,11 @@ ELASTIC_SEARCH_EXAMPLE_DOCS = [
 
 ACCOUNT_ENABLE = False
 SECRET_KEY = "super-secret-key"
+
+#############################################
+# we shouldn't be using the scheduler, but just in case, empty its list of tasks
+
+SCHEDULER_TASKS = []
 
 #############################################
 # important overrides for storage module
