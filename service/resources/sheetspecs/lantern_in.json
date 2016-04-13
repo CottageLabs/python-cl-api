@@ -1,0 +1,45 @@
+{
+	"from_row" : 0,
+	"to_row" : -1,
+	"from_col" : 0,
+	"to_col" : -1,
+	"ignore_empty_rows" : true,
+	"columns" : [
+		{
+			"col_name" : "DOI",
+			"trim" : true,
+			"normalised_name" : "doi",
+			"default" : null,
+			"coerce" : ["unicode"],
+			"ignore_values" : [],
+			"to_unicode" : "unicode"
+		},
+		{
+			"col_name" : "PMID",
+			"trim" : true,
+			"normalised_name" : "pmid",
+			"default" : null,
+			"coerce" : ["unicode"],
+			"ignore_values" : [],
+			"to_unicode" : "unicode"
+		},
+		{
+			"col_name" : "PMCID",
+			"trim" : true,
+			"normalised_name" : "pmcid",
+			"default" : null,
+			"coerce" : ["unicode"],
+			"ignore_values" : [],
+			"to_unicode" : "unicode"
+		},
+		{
+			"col_name" : "Article title",
+			"trim" : true,
+			"normalised_name" : "article_title",
+			"default" : null,
+			"coerce" : ["unicode"],
+			"ignore_values" : [],
+			"to_unicode" : "unicode"
+		}
+	]
+}
