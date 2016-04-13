@@ -30,18 +30,19 @@ Create your local config
     cd python-cl-api
     touch local.cfg
 
-Then you can override any config values that you need to
+Then you can override any config values that you need to (though you shouldn't need to with this app).
 
-To start the application, you'll also need to install it into the virtualenv just this first time
 
-    cd python-cl-api
-    pip install -e .
+## Running
 
-Then, start your app with
+This app is designed to provide supporting tools to the CL API, so is not exposed via the web.  There is therefore
+no web UI or daemon that needs to be running.
 
-    python service/web.py
+All interaction is via command line scripts, which can be executed using the runner
 
-If you want to specify your own root config file, you can use
-
-    APP_CONFIG=path/to/rootcfg.py python service/web.py
+    python magnificent-octopus/octopus/bin/run.py [command] [arguments]
     
+    
+### CSV reading:
+
+See: magnificent-octopus/octopus/modules/sheets/README.md
