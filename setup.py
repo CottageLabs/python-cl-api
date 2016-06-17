@@ -1,4 +1,5 @@
 from setuptools import setup, find_packages
+import sys
 
 setup(
     name = 'python-cl-api',
@@ -7,8 +8,11 @@ setup(
     install_requires = [
         "octopus==1.0.0",
         "esprit",
-        "Flask"
-    ],
+        "Flask",
+        # for deployment
+        "gunicorn",
+        "newrelic",
+    ] + (["setproctitle"] if "linux" in sys.platform else []),
     url = 'http://cottagelabs.com/',
     author = 'Cottage Labs',
     author_email = 'us@cottagelabs.com',

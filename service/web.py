@@ -1,4 +1,8 @@
 from octopus.core import app, initialise, add_configuration
+from octopus.modules.sheets import commasep
+from flask import request
+from StringIO import StringIO
+import uuid
 
 if __name__ == "__main__":
     import argparse
@@ -32,6 +36,26 @@ if __name__ == "__main__":
 def static(filename):
     return custom_static(filename)
 """
+
+@app.route('/csv2obj', methods=['POST'])
+def csv2obj():
+    csvfile = request.files[request.files.keys()[0]]
+    # TODO use octopus.modules.sheets.sheets.ObjectByRow . But it needs
+    # enhancing with being able to define a spec by itself, rather than
+    # having one passed into it.
+
+@app.route('/csv2utf8str', methods = ['POST'])
+def csv2utf8str():
+    f = request.files[request.files.keys()[0]]
+    tmpfn = str(uuid.uuid4())
+    tmppath = '/tmp/{0}'.format(tmpfn)
+    f.save(tmppath)
+
+    reader = commasep.CsvReader(tmppath)
+    result = StringIO()
+    writer = commasep.CsvWriter(result)
+    writer.write(reader.read(), close=False)
+    return result.getvalue()
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug=app.config['DEBUG'], port=app.config['PORT'], threaded=False)

@@ -35,14 +35,16 @@ Then you can override any config values that you need to (though you shouldn't n
 
 ## Running
 
-This app is designed to provide supporting tools to the CL API, so is not exposed via the web.  There is therefore
-no web UI or daemon that needs to be running.
+This app is designed to provide supporting tools to the CL API. Some are exposed via the web, some are command line tools.
 
-All interaction is via command line scripts, which can be executed using the runner
+Command line scripts can be executed using the runner:
 
     python magnificent-octopus/octopus/bin/run.py [command] [arguments]
-    
-    
+
+Capabilities exposed over the network (like the CSV file parser) can be accessed after running the web daemon. This can be set up as usual on review and live servers with nginx and supervisord, or accessed directly on dev envs:
+
+    python service/web.py
+
 ### CSV reading:
 
 See: magnificent-octopus/octopus/modules/sheets/README.md
