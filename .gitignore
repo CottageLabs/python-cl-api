@@ -9,4 +9,5 @@ local.cfg
 
 .idea/
 
+service/deploy/newrelic.ini
 
