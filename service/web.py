@@ -37,6 +37,10 @@ def static(filename):
     return custom_static(filename)
 """
 
+@app.route('/')
+def index():
+    return 'Currently you can POST a CSV file to /csv2utf8str, and a UTF-8 encoded version of the file will be returned back to you over the network in one big text string.'
+
 @app.route('/csv2obj', methods=['POST'])
 def csv2obj():
     csvfile = request.files[request.files.keys()[0]]
